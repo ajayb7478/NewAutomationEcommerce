@@ -230,3 +230,4 @@ F:\SELENIUM STUFF\NewProject\TestChromeSpec\TestChromeSpec\obj\Debug\net6.0\refi
 F:\SELENIUM STUFF\NewProject\TestChromeSpec\TestChromeSpec\obj\Debug\net6.0\TestChromeSpec.pdb
 F:\SELENIUM STUFF\NewProject\TestChromeSpec\TestChromeSpec\obj\Debug\net6.0\TestChromeSpec.genruntimeconfig.cache
 F:\SELENIUM STUFF\NewProject\TestChromeSpec\TestChromeSpec\obj\Debug\net6.0\ref\TestChromeSpec.dll
+F:\SELENIUM STUFF\NewProject\TestChromeSpec\TestChromeSpec\obj\Debug\net6.0\TestChromeSpec.sourcelink.json

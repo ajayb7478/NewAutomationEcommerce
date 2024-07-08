@@ -2,17 +2,21 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using System;
 using TechTalk.SpecFlow;
+using TestChromeSpec.PageObjects;
 
 namespace TestChromeSpec.StepDefinitions
 {
     [Binding]
     public class Feature1StepDefinitions
     {
-        IWebDriver driver;
+        private IWebDriver driver;
+        private AmazonHomePage amazonHomePage; // Create an instance of the PO class
+
         [Given(@"I open the browser")]
         public void GivenIOpenTheBrowser()
         {
             driver = new ChromeDriver();
+            amazonHomePage = new AmazonHomePage(driver); // Initialize PO class with driver
         }
 
         [When(@"I navigate to ""([^""]*)""")]
@@ -22,11 +26,10 @@ namespace TestChromeSpec.StepDefinitions
         }
 
         [When(@"I search for ""([^""]*)""")]
-        public void WhenISearchFor(string p0)
+        public void WhenISearchFor(string searchTerm)
         {
-            driver.FindElement(By.XPath("//*[@id=\"twotabsearchtextbox\"]")).SendKeys(p0);
-            driver.FindElement(By.XPath("//input[@id='nav-search-submit-button']")).Click();
-            
+            amazonHomePage.EnterSearchTerm(searchTerm);
+            amazonHomePage.ClickSearchButton();// Use PO class method
         }
 
         [Then(@"I should see search results related to graphics cards")]

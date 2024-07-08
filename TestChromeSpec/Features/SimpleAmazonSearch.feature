@@ -1,4 +1,4 @@
-﻿Feature: Feature1
+﻿Feature: SimpleAmazonSearch
 
 A short summary of the feature
 
@@ -9,7 +9,7 @@ Scenario: Search for graphics cards
     And I search for "graphics cards"
     Then I should see search results related to graphics cards
 
-Scenario: Search for laptops (New Test Case)
+Scenario: Search for laptops
   Given I open the browser
   When I navigate to "https://www.amazon.in/ref=nav_logo"
   And I search for "laptops"

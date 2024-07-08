@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TestChromeSpec")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa54369e326c37d489b09b486607d4a10d66b387")]
 [assembly: System.Reflection.AssemblyProductAttribute("TestChromeSpec")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TestChromeSpec")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
