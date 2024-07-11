@@ -4,9 +4,7 @@ using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using System;
 using TechTalk.SpecFlow;
-using TestChromeSpec.PageObjects;
 using TestChromeSpec.Pages;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace TestChromeSpec.StepDefinitions
 {
@@ -46,8 +44,14 @@ namespace TestChromeSpec.StepDefinitions
             homePage = new HomePage(driver);
         }
 
-        [When(@"I type the user name into the text box ""([^""]*)""")]
-        public void WhenITypeTheUserNameIntoTheTextBox(string username)
+        [When(@"I navigate to ""([^""]*)""")]
+        public void WhenINavigateTo(string p0)
+        {
+            driver.Navigate().GoToUrl(p0);
+        }
+
+        [Then(@"I type the user name into the text box ""([^""]*)""")]
+        public void ThenITypeTheUserNameIntoTheTextBox(string username)
         {
             loginPage.EnterUserName(username);
         }
@@ -67,8 +71,8 @@ namespace TestChromeSpec.StepDefinitions
         [Then(@"I verify if I have logged in or not")]
         public void ThenIVerifyIfIHaveLoggedInOrNot()
         {
-            
-            Assert.AreEqual("Swag Labs", homePage.GrabHeadingText);
+            Assert.AreEqual("Swag Labs", homePage.GrabHeadingText());
+            Console.WriteLine("test is completed");
         }
     }
 }

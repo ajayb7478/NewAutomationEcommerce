@@ -18,7 +18,7 @@ namespace TestChromeSpec.Pages
 
         // storing the web elements in a variable of type web element and making it private so that it won't be accessed outside
 
-        private IWebElement PageHeading => driver.FindElement(By.XPath("//*[@id=\"user-name\"]"));
+        private IWebElement PageHeading => driver.FindElement(By.XPath("//*[@id=\"header_container\"]/div[1]/div[2]/div"));
         //private IWebElement PassWord => driver.FindElement(By.XPath("//*[@id=\"password\"]"));
         //private IWebElement LoginButton => driver.FindElement(By.XPath("//*[@id=\"login-button\"]"));
 
