@@ -5,6 +5,7 @@ using OpenQA.Selenium.Firefox;
 using System;
 using TechTalk.SpecFlow;
 using TestChromeSpec.Pages;
+using OpenQA.Selenium.Support.UI;
 
 namespace TestChromeSpec.StepDefinitions
 {
@@ -16,6 +17,7 @@ namespace TestChromeSpec.StepDefinitions
         private LoginPage loginPage;
         private HomePage homePage;
         private readonly TestContext _testContext;
+
         public UserAuthenticationStepDefinitions(TestContext testContext)
         {
             _testContext = testContext;  // Constructor to inject TestContext to decide which browser to use
@@ -42,6 +44,7 @@ namespace TestChromeSpec.StepDefinitions
 
             loginPage = new LoginPage(driver);
             homePage = new HomePage(driver);
+            
         }
 
         [When(@"I navigate to ""([^""]*)""")]
@@ -74,5 +77,14 @@ namespace TestChromeSpec.StepDefinitions
             Assert.AreEqual("Swag Labs", homePage.GrabHeadingText());
             Console.WriteLine("test is completed");
         }
+
+        [Then(@"I log out and verify if I have logged out")]
+        public void ThenILogOutAndVerifyIfIHaveLoggedOut()
+        {
+            homePage.ClickSideBurgerMenuButton(); 
+            homePage.ClickLogOutButton();
+            driver.Quit(); 
+        }
+
     }
 }

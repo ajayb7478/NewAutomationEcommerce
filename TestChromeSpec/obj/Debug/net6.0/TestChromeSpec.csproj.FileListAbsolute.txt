@@ -348,3 +348,4 @@ C:\Users\AjayBhaskar\Desktop\Automation Stuff\TestChromeSpec\obj\Debug\net6.0\re
 C:\Users\AjayBhaskar\Desktop\Automation Stuff\TestChromeSpec\obj\Debug\net6.0\TestChromeSpec.pdb
 C:\Users\AjayBhaskar\Desktop\Automation Stuff\TestChromeSpec\obj\Debug\net6.0\TestChromeSpec.genruntimeconfig.cache
 C:\Users\AjayBhaskar\Desktop\Automation Stuff\TestChromeSpec\obj\Debug\net6.0\ref\TestChromeSpec.dll
+F:\SELENIUM STUFF\NewProject\TestChromeSpec\TestChromeSpec\bin\Debug\net6.0\WebDriver.Support.dll

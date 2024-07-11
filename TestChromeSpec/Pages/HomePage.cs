@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,9 @@ namespace TestChromeSpec.Pages
     {
         private readonly IWebDriver driver; // restricts access outside the class and made it read only so that it cannot be modified 
 
-        public HomePage(IWebDriver driver) // Setting a constructer
+        public HomePage(IWebDriver driver) // Setting a constructer object
         {
-            this.driver = driver; // connectection between AmazonHomePage object and web browser 
+            this.driver = driver; // connectection between object and web browser 
         }
 
         // storing the web elements in a variable of type web element and making it private so that it won't be accessed outside
@@ -22,7 +23,32 @@ namespace TestChromeSpec.Pages
         //private IWebElement PassWord => driver.FindElement(By.XPath("//*[@id=\"password\"]"));
         //private IWebElement LoginButton => driver.FindElement(By.XPath("//*[@id=\"login-button\"]"));
 
-        // Public methods for interacting with elements
+        private IWebElement SideBurgerMenuButton => driver.FindElement(By.XPath("//button[@id=\"react-burger-menu-btn\"]"));
+
+
+        private IWebElement LogOutButton => driver.FindElement(By.XPath("//*[@id=\"logout_sidebar_link\"]"));
+
+        public void WaitForElementText(IWebElement element, string expectedText, int timeoutInSeconds)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
+            wait.Until(driver => element.Text.Contains(expectedText));
+        }
+
+
+        public void ClickSideBurgerMenuButton()
+        {
+            SideBurgerMenuButton.Click();
+        }
+        
+        public void ClickLogOutButton()
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
+            WaitForElementText(LogOutButton, "Logout", 2);
+            LogOutButton.Click();
+        }
+
+
+
         public String GrabHeadingText()
         {
             string x = PageHeading.Text;

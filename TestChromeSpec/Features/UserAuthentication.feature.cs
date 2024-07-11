@@ -139,6 +139,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 12
  testRunner.Then("I verify if I have logged in or not", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 13
+ testRunner.Then("I log out and verify if I have logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

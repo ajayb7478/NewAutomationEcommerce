@@ -10,3 +10,6 @@ Scenario: Valid Login
 	Then I type the password into the password box "secret_sauce"
 	Then I login
 	Then I verify if I have logged in or not
+	Then I log out and verify if I have logged out
+
+
