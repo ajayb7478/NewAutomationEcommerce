@@ -2,7 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Backup",
-    "\\TestChromeSpec"
+    "\\TestChromeSpec",
+    "\\TestChromeSpec\\StepDefinitions"
   ],
+  "SelectedNode": "\\TestChromeSpec\\StepDefinitions\\Feature1StepDefinitions.cs",
   "PreviewInSolutionExplorer": false
 }
