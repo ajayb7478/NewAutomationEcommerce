@@ -43,11 +43,9 @@ namespace TestChromeSpec.Pages
         public void ClickLogOutButton()
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
-            WaitForElementText(LogOutButton, "Logout", 2);
+            WaitForElementText(LogOutButton, "Logout", 3);
             LogOutButton.Click();
         }
-
-
 
         public String GrabHeadingText()
         {

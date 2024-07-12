@@ -3,8 +3,9 @@
     "",
     "\\Backup",
     "\\TestChromeSpec",
+    "\\TestChromeSpec\\Pages",
     "\\TestChromeSpec\\StepDefinitions"
   ],
-  "SelectedNode": "\\TestChromeSpec\\StepDefinitions\\Feature1StepDefinitions.cs",
+  "SelectedNode": "\\TestChromeSpec\\Pages\\HomePage.cs",
   "PreviewInSolutionExplorer": false
 }

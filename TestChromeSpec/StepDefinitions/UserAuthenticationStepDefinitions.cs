@@ -75,7 +75,6 @@ namespace TestChromeSpec.StepDefinitions
         public void ThenIVerifyIfIHaveLoggedInOrNot()
         {
             Assert.AreEqual("Swag Labs", homePage.GrabHeadingText());
-            Console.WriteLine("test is completed");
         }
 
         [Then(@"I log out and verify if I have logged out")]
@@ -85,6 +84,14 @@ namespace TestChromeSpec.StepDefinitions
             homePage.ClickLogOutButton();
             driver.Quit(); 
         }
+
+        [Then(@"I verify if I get an error message")]
+        public void ThenIVerifyIfIGetAnErrorMessage()
+        {
+            Assert.AreEqual("Epic sadface: Username and password do not match any user in this service", loginPage.ErrorText());
+            driver.Quit();
+        }
+
 
     }
 }
