@@ -20,11 +20,8 @@ namespace TestChromeSpec.Pages
         // storing the web elements in a variable of type web element and making it private so that it won't be accessed outside
 
         private IWebElement PageHeading => driver.FindElement(By.XPath("//*[@id=\"header_container\"]/div[1]/div[2]/div"));
-        //private IWebElement PassWord => driver.FindElement(By.XPath("//*[@id=\"password\"]"));
-        //private IWebElement LoginButton => driver.FindElement(By.XPath("//*[@id=\"login-button\"]"));
 
         private IWebElement SideBurgerMenuButton => driver.FindElement(By.XPath("//button[@id=\"react-burger-menu-btn\"]"));
-
 
         private IWebElement LogOutButton => driver.FindElement(By.XPath("//*[@id=\"logout_sidebar_link\"]"));
 
@@ -43,11 +40,9 @@ namespace TestChromeSpec.Pages
         public void ClickLogOutButton()
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
-            WaitForElementText(LogOutButton, "Logout", 2);
+            WaitForElementText(LogOutButton, "Logout", 3);
             LogOutButton.Click();
         }
-
-
 
         public String GrabHeadingText()
         {

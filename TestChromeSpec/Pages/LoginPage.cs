@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,16 @@ namespace TestChromeSpec.Pages
         private IWebElement UserName => driver.FindElement(By.XPath("//*[@id=\"user-name\"]"));
         private IWebElement PassWord => driver.FindElement(By.XPath("//*[@id=\"password\"]"));
         private IWebElement LoginButton => driver.FindElement(By.XPath("//*[@id=\"login-button\"]"));
+        private IWebElement LoginPageHeading => driver.FindElement(By.XPath("//*[@id=\"root\"]/div/div[1]"));
+        private IWebElement IncorrectUsernameOrPassword => driver.FindElement(By.XPath("//h3[@data-test=\"error\"]"));
+
+        private void WaitForElementText(IWebElement element, string expectedText, int timeoutInSeconds)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
+            wait.Until(driver => element.Text.Contains(expectedText));
+        }
+
+
 
         // Public methods for interacting with elements
         public void EnterUserName(string username)
@@ -36,5 +47,18 @@ namespace TestChromeSpec.Pages
         {
             LoginButton.Click();
         }
+
+        public String Login_Page_Heading()
+        {
+            string x = LoginPageHeading.Text;
+            return x;
+        }
+
+        public String ErrorText()
+        {
+            string x = IncorrectUsernameOrPassword.Text;
+            return x;
+        }
+
     }
 }

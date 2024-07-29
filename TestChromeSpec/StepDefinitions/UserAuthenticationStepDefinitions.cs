@@ -1,71 +1,43 @@
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Edge;
-using OpenQA.Selenium.Firefox;
-using System;
 using TechTalk.SpecFlow;
 using TestChromeSpec.Pages;
-using OpenQA.Selenium.Support.UI;
 
 namespace TestChromeSpec.StepDefinitions
 {
     [Binding]
     public class UserAuthenticationStepDefinitions
     {
+        private readonly IWebDriver driver;
+        private readonly LoginPage loginPage;
+        private readonly HomePage homePage;
 
-        private IWebDriver driver;
-        private LoginPage loginPage;
-        private HomePage homePage;
-        private readonly TestContext _testContext;
-
-        public UserAuthenticationStepDefinitions(TestContext testContext)
+        public UserAuthenticationStepDefinitions(ScenarioContext scenarioContext)
         {
-            _testContext = testContext;  // Constructor to inject TestContext to decide which browser to use
-        }
-
-        [Given(@"I open a browser")]
-        public void GivenIOpenABrowser()
-        {
-            string browser = _testContext.Properties["Browser"]?.ToString() ?? "chrome";
-            switch (browser.ToLower())
-            {
-                case "chrome":
-                    driver = new ChromeDriver();
-                    break;
-                case "firefox":
-                    driver = new FirefoxDriver();
-                    break;
-                case "edge":
-                    driver = new EdgeDriver();
-                    break;
-                default:
-                    throw new ArgumentException($"Browser not supported: {browser}");
-            }
-
+            driver = scenarioContext["WebDriver"] as IWebDriver;
             loginPage = new LoginPage(driver);
             homePage = new HomePage(driver);
-            
         }
 
-        [When(@"I navigate to ""([^""]*)""")]
-        public void WhenINavigateTo(string p0)
+        [Given(@"I launch the website")]
+        public void GivenIOpenABrowser()
         {
-            driver.Navigate().GoToUrl(p0);
+            Assert.AreEqual("Swag Labs", loginPage.Login_Page_Heading());
         }
 
-        [Then(@"I type the user name into the text box ""([^""]*)""")]
+
+        [When(@"I enter the user name into the text box ""([^""]*)""")]
         public void ThenITypeTheUserNameIntoTheTextBox(string username)
         {
             loginPage.EnterUserName(username);
         }
 
-        [Then(@"I type the password into the password box ""([^""]*)""")]
+        [When(@"I enter the password into the password box ""([^""]*)""")]
         public void ThenITypeThePasswordIntoThePasswordBox(string password)
         {
             loginPage.EnterPassWord(password);
         }
 
-        [Then(@"I login")]
+        [When(@"I login")]
         public void ThenILogin()
         {
             loginPage.ClickLoginButton();
@@ -75,16 +47,19 @@ namespace TestChromeSpec.StepDefinitions
         public void ThenIVerifyIfIHaveLoggedInOrNot()
         {
             Assert.AreEqual("Swag Labs", homePage.GrabHeadingText());
-            Console.WriteLine("test is completed");
         }
 
         [Then(@"I log out and verify if I have logged out")]
         public void ThenILogOutAndVerifyIfIHaveLoggedOut()
         {
-            homePage.ClickSideBurgerMenuButton(); 
+            homePage.ClickSideBurgerMenuButton();
             homePage.ClickLogOutButton();
-            driver.Quit(); 
         }
 
+        [Then(@"I verify if I get an error message")]
+        public void ThenIVerifyIfIGetAnErrorMessage()
+        {
+            Assert.AreEqual("Epic sadface: Username and password do not match any user in this service", loginPage.ErrorText());
+        }
     }
 }
