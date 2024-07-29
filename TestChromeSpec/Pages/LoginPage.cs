@@ -33,6 +33,15 @@ namespace TestChromeSpec.Pages
 
 
 
+        private IWebElement IncorrectUsernameOrPassword => driver.FindElement(By.XPath("//h3[@data-test=\"error\"]"));
+
+        private void WaitForElementText(IWebElement element, string expectedText, int timeoutInSeconds)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
+            wait.Until(driver => element.Text.Contains(expectedText));
+        }
+
+
         // Public methods for interacting with elements
         public void EnterUserName(string username)
         {
@@ -48,12 +57,15 @@ namespace TestChromeSpec.Pages
             LoginButton.Click();
         }
 
+<<<<<<< HEAD
         public String Login_Page_Heading()
         {
             string x = LoginPageHeading.Text;
             return x;
         }
 
+=======
+>>>>>>> 09fa4b70d02b91561e51be4dbe5d719d8fe72a58
         public String ErrorText()
         {
             string x = IncorrectUsernameOrPassword.Text;

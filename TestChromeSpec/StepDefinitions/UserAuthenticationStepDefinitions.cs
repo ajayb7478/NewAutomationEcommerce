@@ -60,6 +60,13 @@ namespace TestChromeSpec.StepDefinitions
         public void ThenIVerifyIfIGetAnErrorMessage()
         {
             Assert.AreEqual("Epic sadface: Username and password do not match any user in this service", loginPage.ErrorText());
+<<<<<<< HEAD
         }
+=======
+            driver.Quit();
+        }
+
+
+>>>>>>> 09fa4b70d02b91561e51be4dbe5d719d8fe72a58
     }
 }
