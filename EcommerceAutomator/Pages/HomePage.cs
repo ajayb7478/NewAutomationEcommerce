@@ -25,12 +25,25 @@ namespace TestChromeSpec.Pages
 
         private IWebElement LogOutButton => driver.FindElement(By.XPath("//*[@id=\"logout_sidebar_link\"]"));
 
+        private IWebElement ProductPage => driver.FindElement(By.XPath("//div[@class=\"inventory_item_name \"][1]"));
+
+        private IWebElement ProductPageBackButton => driver.FindElement(By.XPath("//*[@id=\"back-to-products\"]"));
+
         public void WaitForElementText(IWebElement element, string expectedText, int timeoutInSeconds)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
             wait.Until(driver => element.Text.Contains(expectedText));
         }
 
+        public void NavigateToProductPage()
+        {
+            ProductPage.Click();    
+        }
+
+        public void NavigateToHomePageFromProductPage()
+        {
+            ProductPageBackButton.Click();  
+        }
 
         public void ClickSideBurgerMenuButton()
         {

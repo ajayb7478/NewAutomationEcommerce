@@ -9,7 +9,7 @@ Scenario: Valid Login
     And I enter the password into the password box "secret_sauce"
     And I login
     Then I verify if I have logged in or not
-    And I log out and verify if I have logged out
+    Then I log out and verify if I have logged out
 
 @loginfeature
 Scenario: Incorrect Username or Password

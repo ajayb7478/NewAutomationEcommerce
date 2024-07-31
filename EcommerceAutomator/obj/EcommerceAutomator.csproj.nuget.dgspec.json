@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\SELENIUM STUFF\\NewProject\\EcommerceAutomator\\EcommerceAutomator\\EcommerceAutomator\\EcommerceAutomator.csproj": {}
+    "F:\\SELENIUM STUFF\\NewProject\\TestChromeSpec\\NewAutomationEcommerce\\EcommerceAutomator\\EcommerceAutomator.csproj": {}
   },
   "projects": {
-    "F:\\SELENIUM STUFF\\NewProject\\EcommerceAutomator\\EcommerceAutomator\\EcommerceAutomator\\EcommerceAutomator.csproj": {
+    "F:\\SELENIUM STUFF\\NewProject\\TestChromeSpec\\NewAutomationEcommerce\\EcommerceAutomator\\EcommerceAutomator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\SELENIUM STUFF\\NewProject\\EcommerceAutomator\\EcommerceAutomator\\EcommerceAutomator\\EcommerceAutomator.csproj",
+        "projectUniqueName": "F:\\SELENIUM STUFF\\NewProject\\TestChromeSpec\\NewAutomationEcommerce\\EcommerceAutomator\\EcommerceAutomator.csproj",
         "projectName": "EcommerceAutomator",
-        "projectPath": "F:\\SELENIUM STUFF\\NewProject\\EcommerceAutomator\\EcommerceAutomator\\EcommerceAutomator\\EcommerceAutomator.csproj",
+        "projectPath": "F:\\SELENIUM STUFF\\NewProject\\TestChromeSpec\\NewAutomationEcommerce\\EcommerceAutomator\\EcommerceAutomator.csproj",
         "packagesPath": "C:\\Users\\Ajay\\.nuget\\packages\\",
-        "outputPath": "F:\\SELENIUM STUFF\\NewProject\\EcommerceAutomator\\EcommerceAutomator\\EcommerceAutomator\\obj\\",
+        "outputPath": "F:\\SELENIUM STUFF\\NewProject\\TestChromeSpec\\NewAutomationEcommerce\\EcommerceAutomator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ajay\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pzHsJWuKan8=",
+  "dgSpecHash": "7ashQ8Zl50Y=",
   "success": true,
-  "projectFilePath": "F:\\SELENIUM STUFF\\NewProject\\EcommerceAutomator\\EcommerceAutomator\\EcommerceAutomator\\EcommerceAutomator.csproj",
+  "projectFilePath": "F:\\SELENIUM STUFF\\NewProject\\TestChromeSpec\\NewAutomationEcommerce\\EcommerceAutomator\\EcommerceAutomator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ajay\\.nuget\\packages\\bodi\\1.5.0\\bodi.1.5.0.nupkg.sha512",
     "C:\\Users\\Ajay\\.nuget\\packages\\fluentassertions\\6.2.0\\fluentassertions.6.2.0.nupkg.sha512",

@@ -5,6 +5,7 @@ using OpenQA.Selenium.Firefox;
 using System;
 using System.Security.Policy;
 using TechTalk.SpecFlow;
+using TestChromeSpec.Pages;
 
 namespace TestChromeSpec.Hooks
 {
@@ -13,6 +14,8 @@ namespace TestChromeSpec.Hooks
     {
         private readonly ScenarioContext _scenarioContext;
         private IWebDriver driver;
+        private readonly LoginPage loginPage;
+
         public Hooks(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
@@ -39,6 +42,7 @@ namespace TestChromeSpec.Hooks
             driver.Manage().Window.Maximize();
             _scenarioContext["WebDriver"] = driver;
             driver.Navigate().GoToUrl("https://www.saucedemo.com");
+
         }
 
         [AfterScenario]
