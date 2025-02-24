@@ -48,7 +48,7 @@ namespace TestChromeSpec.Hooks
         [AfterScenario]
         public void AfterScenario()
         {
-            driver?.Quit();
+            driver.Quit();
         }
     }
 }
